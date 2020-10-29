@@ -1,0 +1,143 @@
+sept 1:
+
+Run below command 
+
+>>npm init
+
+>>npm install express nodemon
+
+#######################################################
+step 2:
+
+Add below text into packagr.json under scripts
+
+ "scripts": {
+    "start": "nodemon app.js"
+  },
+
+##########################################################
+step 3:
+
+create app.js file and add below data
+
+const express = require('express');
+
+const app = express();
+
+//Routes
+
+app.get('/', (req, res) => {
+    res.send('We are on Home');
+});
+
+//start listening to the server
+
+app.listen(3000); 
+
+#############################################################
+
+step 4:
+
+For databse connection run below command
+
+npm install mongoose
+
+
+mongodb+srv://rest:<password>@rest.uumjl.mongodb.net/<dbname>?retryWrites=true&w=majority
+
+
+mongo "mongodb+srv://rest.uumjl.mongodb.net/<dbname>" --username rest
+
+mongodb+srv://rest:<password>@rest.uumjl.mongodb.net/test
+
+
+username: testBoy
+password : 09255
+
+###################################################################
+
+step 5:
+
+npm install dotenv
+
+
+#########################################
+
+step 6 : 
+
+create new file .env and add below code
+
+DB_CONNECTION=mongodb+srv://testBoy:09255@rest.uumjl.mongodb.net/default?retryWrites=true&w=majority
+
+######################################################################################################
+
+
+step 7:
+
+create new folder "routes"and add new file "posts.js" in this folder
+
+
+const express =  require('express');
+
+const router = express.Router();
+
+
+router.get('/', (req, res) => {
+    res.send('We are on Posts');
+});
+
+
+
+module.exports = router;
+
+
+################################################################################
+
+
+step 8:
+
+create folder "models" and add file "Post.js"
+
+
+const mongoose = require('mongoose');
+
+const PostSchema = mongoose.mongoose.Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    description:{
+        type: String,
+        required: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
+        
+
+});
+
+module.exports = mongoose.model('Posts', PostSchema);
+
+######################################################################
+
+step 9:
+
+npm install body-parser
+
+
+##############################################
+
+
+npm install cors
+
+
+
+(Get-EC2InstanceAttribute -InstanceId instance_id -Attribute groupSet).Groups
+
+
+
+
+
+
